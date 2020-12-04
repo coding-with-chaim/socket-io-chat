@@ -1,100 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import styled from "styled-components";
+import React, {useEffect, useRef, useState} from "react";
 import io from "socket.io-client";
-
-const Page = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-  background-color: #46516e;
-  flex-direction: column;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  max-height: 500px;
-  overflow: auto;
-  width: 400px;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  padding-bottom: 10px;
-  margin-top: 25px;
-`;
-
-const TextArea = styled.textarea`
-  width: 98%;
-  height: 100px;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
-  font-size: 17px;
-  background-color: transparent;
-  border: 1px solid lightgray;
-  outline: none;
-  color: lightgray;
-  letter-spacing: 1px;
-  line-height: 20px;
-  ::placeholder {
-    color: lightgray;
-  }
-`;
-
-const Button = styled.button`
-  background-color: pink;
-  width: 100%;
-  border: none;
-  height: 50px;
-  border-radius: 10px;
-  color: #46516e;
-  font-size: 17px;
-`;
-
-const Form = styled.form`
-  width: 400px;
-`;
-
-const MyRow = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-`;
-
-const MyMessage = styled.div`
-  width: 45%;
-  background-color: pink;
-  color: #46516e;
-  padding: 10px;
-  margin-right: 5px;
-  text-align: center;
-  border-top-right-radius: 10%;
-  border-bottom-right-radius: 10%;
-`;
-
-const PartnerRow = styled(MyRow)`
-  justify-content: flex-start;
-`;
-
-const PartnerMessage = styled.div`
-  width: 45%;
-  background-color: transparent;
-  color: lightgray;
-  border: 1px solid lightgray;
-  padding: 10px;
-  margin-left: 5px;
-  text-align: center;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 10%;
-`;
+import Message from "./components/Message/Message";
+import User from "./components/User/User";
+import "./App.css";
 
 const App = () => {
+
+  const [currentMessage, setCurrentMessage] = useState("");
   const [yourID, setYourID] = useState();
   const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useState("");
+  const [onlineUsers, setOnlineUsers] = useState([]);
 
   const socketRef = useRef();
 
@@ -103,59 +18,83 @@ const App = () => {
 
     socketRef.current.on("your id", id => {
       setYourID(id);
-    })
+    });
 
     socketRef.current.on("message", (message) => {
       console.log("here");
       receivedMessage(message);
-    })
+    });
+
+    socketRef.current.on("connectu", (username) => {
+      onlineUsers.push(username);
+      console.log("connectu: " + username);
+    });
+
+    socketRef.current.on("fuck", (array) => {
+      console.log(array);
+      setOnlineUsers([]);
+    });
   }, []);
 
   function receivedMessage(message) {
     setMessages(oldMsgs => [...oldMsgs, message]);
   }
 
-  function sendMessage(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
+
     const messageObject = {
-      body: message,
+      body: currentMessage,
       id: yourID,
     };
-    setMessage("");
+    setCurrentMessage("");
+
     socketRef.current.emit("send message", messageObject);
   }
 
-  function handleChange(e) {
-    setMessage(e.target.value);
+  function handleChange(event) {
+    event.preventDefault();
+
+    setCurrentMessage(event.target.value);
   }
 
   return (
-    <Page>
-      <Container>
-        {messages.map((message, index) => {
-          if (message.id === yourID) {
-            return (
-              <MyRow key={index}>
-                <MyMessage>
-                  {message.body}
-                </MyMessage>
-              </MyRow>
-            )
-          }
-          return (
-            <PartnerRow key={index}>
-              <PartnerMessage>
-                {message.body}
-              </PartnerMessage>
-            </PartnerRow>
-          )
-        })}
-      </Container>
-      <Form onSubmit={sendMessage}>
-        <TextArea value={message} onChange={handleChange} placeholder="Say something..." />
-        <Button>Send</Button>
-      </Form>
-    </Page>
+    <div className="App">
+      <div className="container wrapper">
+        <div className="row">
+          <div className="col-9 p-3" style={{background: "white"}}>
+            <div className="messages">
+              {messages.map((message, index) => {
+                if (message.id === yourID) {
+                  return (
+                    <Message key={index} message={message} your={true} />
+                  )
+                }
+                return (
+                  <Message key={index} message={message} />
+                )
+              })}
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="input-group">
+                <input type="text" className="form-control" placeholder="Enter your message..." aria-label="Message" onChange={handleChange} value={currentMessage}/>
+                <div className="input-group-append">
+                  <button className="btn btn-primary" type="submit"><i className="fas fa-paper-plane" /></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="col-3 p-3" style={{background: "#3498db"}}>
+            <h4 style={{color: "white"}}>Online users ({onlineUsers.length}):</h4>
+            {onlineUsers.map((username, index) => {
+              return (
+                <User key={index} id={username} />
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
