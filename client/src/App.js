@@ -112,8 +112,8 @@ const App = () => {
               </div>
             </form>
           </div>
-          <div className="col-3 p-3" style={{background: "#3498db"}}>
-            <h4 style={{ color: "white" }}>Online users ({onlineUsers.length}):</h4>
+          <div className="col-3 p-3" style={{background: "#f2f2f2"}}>
+            <h4 style={{ color: "black" }}>Online users ({onlineUsers.length}):</h4>
             <div className = "Cards">
               {onlineUsers.map((username, index) => {
                 return (
