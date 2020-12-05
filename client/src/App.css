@@ -9,4 +9,24 @@ body {
 .messages {
     overflow-y: scroll;
     height: 80vh;
+    font-size: 20px;
+}
+.Cards{
+    overflow-y: scroll;
+    height: 75vh;
+}
+.Controls {
+    height: 5vh;
+    padding-top:1vh;
+}
+.Button {
+    height: 4vh;
+    width: 6vh;
+    margin-right: 2vh;
+}
+.Large{
+    font-size:larger;
+}
+img {
+    border-radius: 50%;
 }
