@@ -12,9 +12,22 @@
 }
 
 .MessageBody {
-
+}
+.card{
+    border: 0px;
 }
 
 .card-body {
     padding: 1% !important;
+    background-color: lightblue;
+    border-radius: 20px;
+    width: 70%;
+}
+.card-body-yours {
+    margin-left: auto;
+    margin-right: 0;
+    padding: 1% !important;
+    background-color: dodgerblue;
+    border-radius: 20px;
+    width: 70%;
 }
