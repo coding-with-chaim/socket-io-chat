@@ -22,6 +22,7 @@ body {
     padding-top:1vh;
 }
 .Button {
+    margin-top: 10px;
     height: 4vh;
     width: 6vh;
     margin-right: 2vh;
