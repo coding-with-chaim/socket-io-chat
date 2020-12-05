@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="884214c7-f4b5-4765-bd00-04da5204eff2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/img/user1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/img/user2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/img/user3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/img/user4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/img/user5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/img/user6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/util/img.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Message/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Message/Message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/User/User.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/User/User.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/User/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/User/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/public/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -33,9 +45,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nik\WebstormProjects\socket-io-chat\client\public\img" />
       <recent name="C:\Users\Nik\WebstormProjects\socket-io-chat\client\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nik\WebstormProjects\socket-io-chat\client\src\img" />
       <recent name="C:\Users\Nik\WebstormProjects\socket-io-chat\client\src\components\Message" />
     </key>
   </component>

@@ -6,7 +6,7 @@ const socket = require("socket.io");
 const io = socket(server);
 
 // Name generation
-let first = ["smart", "fat", "big", "small", "dumb"];
+let first = ["smart", "fat", "big", "small", "dumb", "cute"];
 let second = ["fox", "whale", "hedgehog", "cat", "dog", "ocelot", "pikachu"];
 
 const generateName = () => {

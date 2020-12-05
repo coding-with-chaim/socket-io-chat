@@ -1,5 +1,6 @@
 .Message {
     margin-bottom: 5px;
+    padding: 5px;
 }
 
 .MessageImage {
@@ -16,5 +17,4 @@
 }
 .card-body.users {
     padding: 1% !important;
-    background-color:none;
 }

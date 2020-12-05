@@ -7,6 +7,7 @@ import "./App.css";
 const App = () => {
 
   let savedID = "";
+  let tts = true;
   const [textToSpeech, setTextToSpeech] = useState(true);
   const [currentMessage, setCurrentMessage] = useState("");
   const [yourID, setYourID] = useState();
@@ -43,7 +44,7 @@ const App = () => {
     document.getElementById("messages").scrollTop = document.getElementById("messages").scrollHeight;
 
     // Text to speech
-    if (textToSpeech) {
+    if (tts) {
       if (message.id === savedID) return;
       const speechSynthesis = new SpeechSynthesisUtterance();
       speechSynthesis.text = message.body;
@@ -85,6 +86,7 @@ const App = () => {
     }
 
     function handleTextToSpeech() {
+      tts = !tts;
       setTextToSpeech(!textToSpeech);
     }
 
