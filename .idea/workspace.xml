@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="884214c7-f4b5-4765-bd00-04da5204eff2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Message/Message.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Message/Message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/User/User.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/User/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +49,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607100267712</updated>
-      <workItem from="1607100269080" duration="8323000" />
+      <workItem from="1607100269080" duration="9746000" />
+      <workItem from="1607171659040" duration="2732000" />
     </task>
     <servers />
   </component>
