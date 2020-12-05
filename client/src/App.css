@@ -7,11 +7,13 @@ body {
 }
 
 .messages {
+    padding-right: 10px;
     overflow-y: scroll;
     height: 80vh;
     font-size: 20px;
 }
 .Cards{
+    padding-right: 10px;
     overflow-y: scroll;
     height: 75vh;
 }
@@ -20,6 +22,7 @@ body {
     padding-top:1vh;
 }
 .Button {
+    margin-top: 10px;
     height: 4vh;
     width: 6vh;
     margin-right: 2vh;
@@ -29,4 +32,25 @@ body {
 }
 img {
     border-radius: 50%;
+}
+.input-group-append {
+    margin-top: 10px;
+}
+input{
+    margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: darkgray; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
 }
