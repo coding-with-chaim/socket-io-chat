@@ -34,4 +34,5 @@ io.on("connection", socket => {
     });
 })
 
+console.log("init");
 server.listen(8000, () => console.log("server is running on port 8000"));
