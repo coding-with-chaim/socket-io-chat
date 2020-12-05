@@ -6,6 +6,7 @@ import "./App.css";
 
 const App = () => {
 
+  let savedID = "";
   const [textToSpeech, setTextToSpeech] = useState(true);
   const [currentMessage, setCurrentMessage] = useState("");
   const [yourID, setYourID] = useState();
@@ -18,6 +19,7 @@ const App = () => {
     socketRef.current = io.connect('/');
 
     socketRef.current.on("your id", id => {
+      savedID = id;
       setYourID(id);
     });
 
@@ -42,7 +44,7 @@ const App = () => {
 
     // Text to speech
     if (textToSpeech) {
-      if (message.id === yourID) return;
+      if (message.id === savedID) return;
       const speechSynthesis = new SpeechSynthesisUtterance();
       speechSynthesis.text = message.body;
       window.speechSynthesis.speak(speechSynthesis);
