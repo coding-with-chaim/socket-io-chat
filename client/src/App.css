@@ -32,9 +32,15 @@ body {
 img {
     border-radius: 50%;
 }
+.input-group-append {
+    margin-top: 10px;
+}
+input{
+    margin-top: 10px;
+}
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Handle */
