@@ -14,15 +14,18 @@ const generateName = () => {
 };
 
 // Socket
-let online = [];
+let onlineUsernames = [];
+let onlineIds = [];
 
 io.on("connection", socket => {
     let name = generateName();
-    online.push(name);
+    onlineUsernames.push(name);
+    onlineIds.push(socket.id);
     console.log(name + " just connected.");
-    io.emit("connectu", name);
+    io.emit("online-users", onlineUsernames);
 
-    io.to(socket.id).emit("fuck", online);
+    console.log(onlineUsernames);
+    console.log(onlineIds);
 
     socket.emit("your id", name);
     socket.on("send message", body => {
@@ -30,7 +33,19 @@ io.on("connection", socket => {
     });
 
     socket.on('disconnect', () => {
-        console.log('user disconnected');
+        console.log(name + " just disconnected.");
+        io.emit("user-disconnected", name);
+    });
+
+    socket.on('disconnect', function () {
+        let index1 = onlineIds.indexOf(socket.id);
+        onlineUsernames.splice(index1, 1);
+
+        let index2 = onlineIds.indexOf(socket.id);
+        onlineIds.splice(index2, 1);
+
+        io.emit("online-users", onlineUsernames);
+        console.log("disconectu: " + socket.id);
     });
 })
 

@@ -29,13 +29,18 @@ const App = () => {
       receivedMessage(message);
     });
 
-    socketRef.current.on("connectu", (username) => {
-        onlineUsers.push(username);
-      console.log("connectu: " + username);
+    socketRef.current.on("online-users", (array) => {
+      setOnlineUsers(array);
     });
 
-    socketRef.current.on("fuck", (array) => {
-        setOnlineUsers(array);
+    socketRef.current.on("user-connected", (username) => {
+      setOnlineUsers([...onlineUsers, username])
+      console.log("user-connected: " + username);
+    });
+
+    socketRef.current.on("user-disconnected", (username) => {
+      onlineUsers.push(username);
+      console.log("user-connected: " + username);
     });
   }, []);
 

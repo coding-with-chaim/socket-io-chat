@@ -15,8 +15,6 @@ const Message = (props) => {
     return (
         <div className="Message card">
             <div className="card-body">
-              {props.message.id}
-              {getImage(props.message.id)}
               <img src={getImage("cute-fox")}
                     className="MessageImage float-left mr-2"
                     alt={props.message.id + "'s avatar"}
